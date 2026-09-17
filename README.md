@@ -85,7 +85,7 @@ The model performs reasonably well as a linear baseline, but some high-cost case
 
 ## Prediction app
 
-I also connected the trained model to a small **Gradio** interface so a user can enter a profile and get a prediction without touching the notebook.
+I first built a small **Gradio** interface in Colab to test the prediction flow. For the final deployment version, I moved the same model and input logic into **Streamlit** so the app can run directly from the GitHub project.
 
 Two example profiles from testing:
 
@@ -106,7 +106,10 @@ medical-insurance-cost-prediction/
 ├── app.py
 ├── train_model.py
 ├── requirements.txt
+├── DEPLOYMENT.md
 ├── .gitignore
+├── .streamlit/
+│   └── config.toml
 ├── model/
 │   ├── insurance_model.pkl
 │   └── metadata.json
@@ -135,7 +138,7 @@ Activate the environment, then run:
 
 ```bash
 pip install -r requirements.txt
-python app.py
+streamlit run app.py
 ```
 
 The trained model is already included in the `model/` folder.
@@ -148,9 +151,11 @@ python train_model.py
 
 ## Deployment
 
-The app is built with Gradio, so it can be deployed on **Hugging Face Spaces** using the same `app.py` and `requirements.txt` files in this repository.
+The deployment version uses **Streamlit**. It can be connected directly to this GitHub repository and deployed with `app.py` as the entry file.
 
-I kept deployment separate from model training so the app can load the saved model immediately rather than retraining every time it starts.
+I kept deployment separate from model training, so the app loads the saved model from the `model/` folder instead of retraining every time it starts. The exact deployment steps are in [`DEPLOYMENT.md`](DEPLOYMENT.md).
+
+Once the public app is live, I will add the demo link here.
 
 ## Limitations
 

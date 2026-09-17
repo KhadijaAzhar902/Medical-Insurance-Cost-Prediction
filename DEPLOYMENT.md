@@ -1,22 +1,33 @@
-# Deploying the Gradio app
+# Deploying the Streamlit app
 
-The repository is already set up so the same app can run locally or on Hugging Face Spaces.
+The deployment version of the project uses Streamlit and loads the trained model directly from the `model/` folder.
 
-## Hugging Face Spaces
+## Streamlit Community Cloud
 
-1. Create a new Space at Hugging Face.
-2. Choose **Gradio** as the SDK.
-3. Upload the contents of this repository (or copy the files from GitHub).
-4. Make sure `app.py`, `requirements.txt`, and the `model/` folder are present.
-5. Wait for the Space to build.
-6. Open the public app URL and test at least two customer profiles.
+1. Push this version of the project to GitHub.
+2. Open Streamlit Community Cloud and sign in with GitHub.
+3. Create a new app and select this repository.
+4. Use the `main` branch and set the app file to `app.py`.
+5. Deploy the app and wait for the build to finish.
+6. Open the public app link and test a few different customer profiles.
 
-The app loads `model/insurance_model.pkl`, so it does not need to retrain on startup.
+No API keys or secrets are needed for this project.
 
-For the internship submission, take screenshots of:
+The app loads `model/insurance_model.pkl`, so it does not retrain every time it starts.
 
-- the GitHub repository home page
+## Quick checks after deployment
+
+Try these two profiles and confirm that the deployed app gives approximately the same results as the notebook tests:
+
+- Age 25, BMI 22.5, 0 children, Female, Non-smoker, Northeast → about **2,283.40**
+- Age 50, BMI 35, 2 children, Male, Smoker, Southeast → about **35,675.76**
+
+For the Phase 8 submission, keep screenshots of:
+
+- the GitHub repository
 - the rendered README
-- the deployed app
-- one working prediction result
-- the final repository file structure
+- the deployed application
+- a working prediction
+- the final repository structure
+
+Once the app is live, add its public link to the README.
