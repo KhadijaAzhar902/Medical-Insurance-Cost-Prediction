@@ -2,6 +2,12 @@
 
 I built this project as part of my AI/ML internship to practice the complete machine learning workflow, not just the model-training step. The goal is simple: use a few customer details to estimate medical insurance charges and then make the trained model usable through a small web app.
 
+## Live Demo
+
+Try the deployed application here:
+
+[Medical Insurance Cost Predictor](https://medical-insurance-cost-prediction-xlpelheugsgrq3ubeni4rv.streamlit.app)
+
 ## What the project does
 
 The model takes these inputs:
