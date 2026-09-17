@@ -1,0 +1,20 @@
+{
+  "feature_order": [
+    "age",
+    "bmi",
+    "children",
+    "sex_male",
+    "smoker_yes",
+    "region_northwest",
+    "region_southeast",
+    "region_southwest"
+  ],
+  "test_size": 0.2,
+  "random_state": 42,
+  "metrics": {
+    "mae": 4177.045561036321,
+    "mse": 35478020.67523562,
+    "rmse": 5956.342894363589,
+    "r2": 0.8069287081198011
+  }
+}
